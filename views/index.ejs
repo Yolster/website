@@ -1,11 +1,42 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('./partials/header.ejs', {}) %>
+
+<section class="p-5"> 
+    <div class="position-relative p-5">
+        <div class="position-relative p-5">
+            <div class="position-relative p-5">
+    <h1 id="index-text">
+        Self taught<br/>
+        Full-stack web developer
+    </h1>
+    <p>Hi, my name is Arda, I am from Turkey and I am a self taught web developer.<br/> I started building a website from the age of 14.</p>
+    <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %> ? 'gif' : 'png'" class="position-absolute top-50 end-0 translate-middle-y rounded-pill" id="index-logo">
+</div></div></div>
+</section>
+
+<section class="p-5">
+    <div class="position-relative p-5">
+        <div class="position-relative p-5">
+            <div class="position-relative p-5">
+    <h2 id="index-text">My live project:</h2>
+    <br/>
+    <a href="https://github.com/Yolster/discord-bot" id="tech-text" style="text-decoration: none; color:white;"><i class="fab fa-discord" style="color:#6d85d2;"></i> Discord Bot</a>&emsp;&emsp;
+    <a href="https://github.com/website" id="tech-text" style="text-decoration: none; color:white;"><i class="fas fa-globe"></i> Website</a>
+</div></div></div><div></div>
+</section>
+
+<section class="p-5">
+    <div class="position-relative p-5">
+        <div class="position-relative p-5">
+            <div class="position-relative p-5">
+    <h2 id="index-text">Languages and tools:</h2>
+    <br/>
+    <a id="tech-text"><i class="fab fa-js-square" style="color:#efd81d"></i> Javascript</a>&emsp;&emsp;
+    <a id="tech-text"><i class="fab fa-html5" style="color:#de4b25"></i> Html</a>&emsp;&emsp;
+    <a id="tech-text"><i class="fab fa-css3-alt" style="color:#146eb1"></i> Css</a>&emsp;&emsp;
+    <a id="tech-text"><i class="fab fa-node-js" style="color:#74a862"></i> Node.js</a>&emsp;&emsp;
+    <a id="tech-text"><i class="fab fa-git-alt" style="color:#e94e31"></i> Git</a>&emsp;&emsp;
+</div></div></div><div></div>
+</section>
+
+
+<%- include('./partials/footer.ejs', {}) %>

@@ -1,0 +1,18 @@
+#navbar-logo {
+    width: 60px;
+    height: 60px;
+}
+
+#index-logo {
+    width:250px;
+    height:250px;
+    border: 1px solid white;
+}
+
+#index-text {
+    font-weight: bold;
+}
+
+#tech-text {
+    font-size: 30px;
+}

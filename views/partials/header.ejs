@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %> ? 'gif' : 'png'">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel='stylesheet' href='<%= font %>'>
+    <title>HOME - Yolster</title>
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-2 shadow-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %> ? 'gif' : 'png'" class="rounded-pill" id="navbar-logo"></a>
+          <button class="navbar-toggler">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav float-right ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="/blog">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/donate">Donate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/project">Project</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
