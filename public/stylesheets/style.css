@@ -6,7 +6,7 @@
 #index-logo {
     width:250px;
     height:250px;
-    border: 1px solid white;
+    border: 1px solid black;
 }
 
 #index-text {
@@ -14,5 +14,21 @@
 }
 
 #tech-text {
-    font-size: 30px;
+    font-size: 25px;
+}
+
+#twitter , #instagram , #discord{
+    color:white;
+}
+
+#twitter:hover {
+    color:#00aced;
+}
+
+#instagram:hover {
+    color: #f73846;
+}
+
+#discord:hover {
+    color: #6d85d2;
 }

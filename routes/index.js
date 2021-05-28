@@ -6,16 +6,14 @@ var settings = require('../settings.json');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   request({
-    url: `https://discordapp.com/api/v7/users/${settings.id}`,
-    headers: {
-    "Authorization": `Bot ${settings.token}`
-    },
+    url: `https://api.github.com/users/${settings.github_username}/repos`,
+    headers: {'user-agent': 'node.js'},
     }, async(error, response, body) => {
     if (error) return console.log(error)
     else if (!error) {
-    var user = JSON.parse(body)
+    var data = JSON.parse(body)
       res.render('index', {
-        user:user,
+        data:data,
         font: settings.fontawesome
       })
     }
