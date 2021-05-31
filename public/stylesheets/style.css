@@ -14,7 +14,12 @@
 }
 
 #tech-text {
-    font-size: 25px;
+    font-size: 20px;
+}
+
+#repos {
+    text-decoration: none;
+    color: white;
 }
 
 #twitter , #instagram , #discord{
