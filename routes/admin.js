@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 const request = require('request');
 var settings = require('../settings.json');
-var {con,session} = require('../app')
+var {session} = require('../app')
+var {con} = require('../app')
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -21,6 +22,7 @@ router.get('/', function(req, res) {
       return res.redirect(`/ratelimit`)
     }else{
       res.render('admin/login', {
+        title:"LOGIN - Yolster",
         data: data,
         font: settings.fontawesome
       })
@@ -28,15 +30,16 @@ router.get('/', function(req, res) {
   })
     });
 
-    router.post('/admin/login', async(req,res) => {
-      const data = await new Promise((resolve, reject) => {
-         con.query('SELECT * FROM admin',function (err, result) {
-        if (err)
-            reject(err);
-        resolve(result);
-    });
-});
+    router.post('/login', async(req,res) => {
 
+      const veri = await new Promise((resolve, reject) => {
+        con.query(`SELECT * FROM admin`, function (err, result) {
+            if (err)
+                reject(err);
+            resolve(result);
+        });
+    });
+       
       if(!req.body.username){
         return res.redirect('/admin/login')
       }
@@ -45,11 +48,11 @@ router.get('/', function(req, res) {
         return res.redirect('/admin/login')
       }
 
-      if(req.body.username != data[0].name){
+      if(req.body.username != veri[0].name){
         return res.redirect('/admin/login')
       }
 
-      if(req.body.password != data[0].password){
+      if(req.body.password != veri[0].password){
         return res.redirect('/admin/login')
       }
 
@@ -59,20 +62,69 @@ router.get('/', function(req, res) {
     })
 
     // router/admin/dashboard
-    router.get('/dashboard', function(req, res) {
-      const data = await new Promise((resolve, reject) => {
-        con.query('SELECT * FROM admin',function (err, result) {
-       if (err)
-           reject(err);
-       resolve(result);
-   });
-});
-  
-      if(data[0].name != req.session.username){
+    router.get('/dashboard', async(req, res) => {
+
+      if(!req.session.username){
+        return res.redirect('/admin')
+      }
+
+      const veri = await new Promise((resolve, reject) => {
+        con.query(`SELECT * FROM admin WHERE name = ?`, [req.session.username], function (err, result) {
+            if (err)
+                reject(err);
+            resolve(result);
+        });
+    });
+
+      if(veri[0].password != req.session.password){
         return res.redirect('/admin')
       } 
 
-      if(data[0].password != req.session.password){
+      const blog = await new Promise((resolve, reject) => {
+        con.query(`SELECT * FROM blog`, function (err, result) {
+            if (err)
+                reject(err);
+            resolve(result);
+        });
+    });
+       request({
+        url: `https://api.github.com/users/${settings.github_username}/repos`,
+        headers: {'user-agent': 'node.js'},
+        }, async(error, response, body) => {
+        if (error) return console.log(error)
+        else if (!error) {
+        var body = JSON.parse(body)
+        if(body.message){
+          return res.redirect(`/ratelimit`)
+        }else{
+          res.render('admin/dashboard', {
+            title:"DASHBOARD - Yolster",
+            sql: veri,
+            blog: blog,
+            data: body,
+            font: settings.fontawesome
+          })
+        }}
+      })
+        });
+
+
+         // router new blog
+    router.get('/blog/new', async(req, res) => {
+
+      if(!req.session.username){
+        return res.redirect('/admin')
+      }
+
+      const veri = await new Promise((resolve, reject) => {
+        con.query(`SELECT * FROM admin WHERE name = ?`, [req.session.username], function (err, result) {
+            if (err)
+                reject(err);
+            resolve(result);
+        });
+    });
+
+      if(veri[0].password != req.session.password){
         return res.redirect('/admin')
       } 
 
@@ -86,7 +138,8 @@ router.get('/', function(req, res) {
         if(body.message){
           return res.redirect(`/ratelimit`)
         }else{
-          res.render('admin/login', {
+          res.render('admin/new-blog', {
+            title:"NEW BLOG - Yolster",
             data: body,
             font: settings.fontawesome
           })
@@ -94,4 +147,26 @@ router.get('/', function(req, res) {
       })
         });
 
+        // post new blog
+        router.post('/blog/new', async(req,res) => {
+           
+          if(!req.body.title){
+            return res.redirect('/admin/blog/new')
+          }
+    
+          if(!req.body.thumbnail){
+            return res.redirect('/admin/blog/new')
+          }
+    
+          if(!req.body.content){
+            return res.redirect('/admin/blog/new')
+          }
+
+          con.query('INSERT INTO blog(title,thumbnail,content) VALUES(?,?,?)',[req.body.title, req.body.thumbnail, req.body.content], function (err, result) {
+            if (err) console.log(err);
+          })
+    
+          res.redirect('/admin/dashboard')
+        })
+    
 module.exports = router;

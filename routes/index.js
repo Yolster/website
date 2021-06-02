@@ -2,9 +2,20 @@ var express = require('express');
 var router = express.Router();
 const request = require('request');
 var settings = require('../settings.json');
+var {session} = require('../app')
+var {con} = require('../app')
 
 /* GET home page. */
-router.get('/', function(req, res) {
+router.get('/', async(req, res) => {
+  
+  const blog = await new Promise((resolve, reject) => {
+    con.query(`SELECT * FROM blog`, function (err, result) {
+        if (err)
+            reject(err);
+        resolve(result);
+    });
+});
+
   request({
     url: `https://api.github.com/users/${settings.github_username}/repos`,
     headers: {'user-agent': 'node.js'},
@@ -16,6 +27,8 @@ router.get('/', function(req, res) {
       return res.redirect(`/ratelimit`)
     }else{
       res.render('index', {
+        blog:blog,
+        title:"HOME - Yolster",
         data:data,
         font: settings.fontawesome
       })
