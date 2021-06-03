@@ -162,8 +162,6 @@ router.get('/', function(req, res) {
             return res.redirect('/admin/blog/new')
           }
 
-          var special = htmlspecial
-
           con.query('INSERT INTO blog(title,thumbnail,content) VALUES(?,?,?)',[req.body.title, req.body.thumbnail, req.body.content], function (err, result) {
             if (err) console.log(err);
           })

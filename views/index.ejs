@@ -66,4 +66,29 @@
 </div></div>
 </section>
 
+<section class="clean-block clean-form p-5" id="contact">
+  <h1>CONTACT</h1>
+<br/>
+  <a href="mailto:<%= settings.contact.email %>" style="text-decoration: none;">
+      <h4 class="col-md-2 btn btn-outline-dark">
+          <i class="fas fa-envelope"></i>
+      </h4></a>
+
+      <a href="https://instagram.com/<%= settings.contact.instagram %>" style="text-decoration: none; color:black">
+        <h4 class="col-md-2 btn btn-outline-dark">
+            <i class="fab fa-instagram"></i>
+        </h4></a>
+
+        <a href="https://discord.gg/<%= settings.contact.discord %>" style="text-decoration: none; color:black">
+          <h4 class="col-md-2 btn btn-outline-dark">
+              <i class="fab fa-discord"></i>
+          </h4></a>
+
+          <a href="https://twitter.com/<%= settings.contact.twitter %>" style="text-decoration: none; color:black">
+            <h4 class="col-md-2 btn btn-outline-dark">
+                <i class="fab fa-twitter"></i>
+            </h4></a>
+      </section>
+
+
 <%- include('./partials/footer.ejs', {}) %>

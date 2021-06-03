@@ -30,6 +30,7 @@ router.get('/', async(req, res) => {
         blog:blog,
         title:"HOME - Yolster",
         data:data,
+        settings:settings,
         font: settings.fontawesome
       })
     }
