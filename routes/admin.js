@@ -252,5 +252,9 @@ router.get('/', function(req, res) {
                 })
 
 
+                router.get('*', async(req,res) => {
+                  res.render('404', 404)
+                })
+                
     
 module.exports = router;

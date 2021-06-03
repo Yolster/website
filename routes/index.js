@@ -73,5 +73,9 @@ router.get('/ratelimit', function(req, res, next) {
 });
 
 
+router.get('*', async(req,res) => {
+  res.render('404')
+})
+
 
 module.exports = router;
