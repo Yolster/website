@@ -12,9 +12,8 @@
 
   <section class="clean-block clean-form dark p-5">
     <div class="container">
-      <div class="row">
-              <h5 class="h5">BLOG</h5>
-
+      <div class="row">        
+        <h3 id="index-text">Blog:</h3>
               <% for(i=0;i < blog.length; i++){ %>
                 <div class="col-sm-3 mb-2">
                   <div class="card bg-dark text-light" >
@@ -22,7 +21,7 @@
                       <div class="card-body">
                         <h5 class="card-title"><%= blog[i].title %></h5>
                         <p class="card-text text-truncate"><%= blog[i].content %></p>
-                        <a href="/admin/blog/<%= blog[i].id %>" class="btn btn-primary rounded">READ MORE</a>
+                        <a href="/blog/<%= blog[i].id %>" class="btn btn-primary rounded">READ MORE</a>
                       </div>
                     </div>
                   </div>
@@ -34,7 +33,7 @@
 <section class="clean-block clean-form dark p-5">
     <div class="container">
       <div class="row">
-        <h2 id="index-text">GitHub Repository:</h2>
+        <h3 id="index-text">GitHub Repository:</h3>
               <% for(i=0; i < data.length; i++){ %>
                 <div class="col-sm-3 mb-2">
                   <div class="card bg-dark text-light">
@@ -53,7 +52,7 @@
 <section class="p-5">
   <div class="container">
     <div class="row">
-    <h2 id="index-text">Languages and tools:</h2>
+    <h3 id="index-text">Languages and tools:</h3>
     <br/>
     <div class="row">
     <div class="col-md-2 col-md-push-2 col-xs-12 mb-2"><a id="tech-text"><i class="fab fa-js-square" style="color:#efd81d"></i> Javascript</a></div>

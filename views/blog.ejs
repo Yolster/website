@@ -1,0 +1,13 @@
+<%- include('./partials/header.ejs', {}) %>
+<br/><br/>
+<section class="clean-block clean-form dark p-5">
+    <div class="container">
+        <div class="row">
+            <img src="<%= blog[0].thumbnail %>"/>
+<h1><%= blog[0].title %></h1>
+<br/>
+<p><%= blog[0].content %></p>
+</div></div>
+</section>
+
+<%- include('./partials/footer.ejs', {}) %>
