@@ -250,11 +250,5 @@ router.get('/', function(req, res) {
         
                   res.redirect('/admin/dashboard')
                 })
-
-
-                router.get('*', async(req,res) => {
-                  res.render('404', 404)
-                })
-                
     
 module.exports = router;
