@@ -1,11 +1,11 @@
 {
-    "fontawesome":"https://use.fontawesome.com/releases/v5.15.3/css/all.css",
-    "github_username":"Yolster",
+    "fontawesome":"",
+    "github_username":"",
     "sql":{
-        "host":"localhost",
-        "user":"root",
+        "host":"",
+        "user":"",
         "password":"",
-        "db":"yolster"
+        "db":""
     },
     "contact": {
         "email":"",
