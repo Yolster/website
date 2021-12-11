@@ -7,25 +7,9 @@ var mysql = require('mysql');
 const session = require('express-session');
 var settings = require('./settings.json')
 
-var connection = mysql.createConnection({
-  host     : settings.sql.host,
-  user     : settings.sql.user,
-  password : settings.sql.password,
-  database : settings.sql.db
-});
-
-connection.connect((err)=> {
-  if (err){
-      throw err;
-  }
-  console.log('MySQL veritabanına başarıyla bağlanıldı.'); 
-});
-
-module.exports = { con: connection, session: session };
+module.exports = {session: session };
 
 var indexRouter = require('./routes/index');
-var adminRouter = require('./routes/admin');
-
 var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -43,18 +27,16 @@ app.use(session({
 }));
 
 app.use('/', indexRouter);
-app.use('/admin', adminRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get('env') === 'product' ? err : {};
 
   // render the error page
   res.status(err.status || 500);

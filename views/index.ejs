@@ -10,41 +10,20 @@
     <p>Hi, my name is Arda, I am from Turkey and I am a self taught web developer.<br/> I started building a website from the age of 14.</p>
   </section>
 
-  <section class="clean-block clean-form dark p-5" id="blog">
-    <div class="container">
-      <div class="row">        
-        <h3 id="index-text">Blog:</h3>
-              <% for(i=0;i < blog.length; i++){ %>
-                <div class="col-sm-3 mb-2">
-                  <div class="card bg-dark text-light" >
-                      <img src="<%= blog[i].thumbnail %>" class="card-img-top" alt="img">
-                      <div class="card-body">
-                        <h5 class="card-title"><%= blog[i].title %></h5>
-                        <p class="card-text text-truncate"><%= blog[i].content %></p>
-                        <a href="/blog/<%= blog[i].id %>" class="btn btn-primary rounded">READ MORE</a>
-                      </div>
-                    </div>
-                  </div>
-              <% } %>
-  
-  </div></div>
-  </section>
-
-<section class="clean-block clean-form dark p-5">
+<section id="project" class="clean-block clean-form dark p-5">
     <div class="container">
       <div class="row">
         <h3 id="index-text">GitHub Repository:</h3>
               <% for(i=0; i < data.length; i++){ %>
-                <div class="col-sm-3 mb-2">
-                  <div class="card bg-dark text-light">
-                    <img src="https://png.pngitem.com/pimgs/s/128-1280494_github-github-logo-thumbnail-hd-png-download.png" class="card-img-top" alt="img">
-                      <div class="card-body">
-                        <h5 class="card-title"><%= data[i].name %></h5>
-                        <p class="card-text text-truncate"><%= data[i].language %> / <%= data[i].stargazers_count %> <i class="fas fa-star"></i></p>
-                        <a href="<%= data[i].html_url %>" class="btn btn-primary rounded">SEE MORE</a>
-                      </div>
-                    </div>
+               <div class="col w-50 bg-dark me-1 mb-2">
+                <a href="<%= data[i].html_url %>" class="bg-dark text-light" style="text-decoration: none;">
+                  <div class="card-body">
+                    <i class="fab fa-github fa-6x pe-4" style="color:white; float:left"></i>
+                    <h5 class="card-title pt-2"><%= data[i].name %></i></h5>
+                    <p class="card-text"><%= data[i].language %> / <%= data[i].stargazers_count %> <i class="fas fa-star"></i></p>
+                  </a> 
                   </div>
+                </div>
               <% } %>
   </div></div>
   </section>
@@ -56,14 +35,17 @@
     <br/>
     <div class="row">
     <div class="col-md-2 col-md-push-2 col-xs-12 mb-2"><a id="tech-text"><i class="fab fa-js-square" style="color:#efd81d"></i> Javascript</a></div>
-    <div class="col-md-2 col-md-pull-2 col-xs-12"><a id="tech-text"><i class="fab fa-html5" style="color:#de4b25"></i> Html</a></div>
-    <div class="col-md-2 col-xs-12"><a id="tech-text"><i class="fab fa-css3-alt" style="color:#146eb1"></i> Css</a></div>
     <div class="col-md-2 col-md-push-2 col-xs-12"><a id="tech-text"><i class="fab fa-node-js" style="color:#74a862"></i> Node.js</a></div>
+    <div class="col-md-2 col-xs-12"><a id="tech-text"><i class="fab fa-php" style="color:#7377AD"></i> Php</a></div>
+    <div class="col-md-2 col-md-pull-2 col-xs-12"><a id="tech-text"><i class="fab fa-html5" style="color:#de4b25"></i> Html5</a></div>
+    <div class="col-md-2 col-xs-12"><a id="tech-text"><i class="fab fa-css3-alt" style="color:#146eb1"></i> Css3</a></div>
+    <div class="col-md-2 col-xs-12"><a id="tech-text"><i class="fab fa-bootstrap" style="color:#7611F6"></i> BootStrap</a></div>
+    <div class="col-md-2 col-xs-12"><a id="tech-text"><i class="fab fa-css3" style="color:#40C3AA"></i> Bulma.IO</a></div>
     <div class="col-md-2 col-md-pull-2 col-xs-12"><a id="tech-text"><i class="fab fa-git-alt" style="color:#e94e31"></i> Git</a></div>
     <div class="col-md-2 col-xs-12"><a id="tech-text"><i class="fas fa-database" style="color:#005d88"></i> MySql</a></div>
     <div class="col-md-2 col-xs-12"><a id="tech-text"><i class="fas fa-cloud" style="color:#479848"></i> MongoDB</a></div>
-    <div class="col-md-2 col-xs-12"><a id="tech-text"><i class="fab fa-bootstrap" style="color:#7611F6"></i> BootStrap</a></div>
-    <div class="col-md-2 col-xs-12"><a id="tech-text"><i class="fab fa-react" style="color:#61DAFB"></i> ReactJS</a></div>
+    <div class="col-md-2 col-xs-12"><a id="tech-text"><i class="fab fa-react" style="color:#61DAFB"></i> React.JS</a></div>
+    <div class="col-md-2 col-xs-12"><a id="tech-text"><i class="fab fa-vuejs" style="color:#3FB27F"></i> Vue.JS</a></div>
 </div>
 </div></div>
 </section>
@@ -71,38 +53,38 @@
 <hr style="color:black"/>
 
 <section class="clean-block clean-form p-5" id="contact">
-<div class="row" align="center">
-  <h3 id="index-text" class="mb-5">Contact</h3>
+<div class="row">
+  <h3 id="index-text">Contact</h3>
 
-  <div class="col-md-2">
+  <div class="col">
   <a href="mailto:<%= settings.contact.email %>" style="text-decoration: none; color:#253163">
       <h4>
           <i class="fas fa-envelope" style="color:#253163"></i>
       </h4></a>
 </div>
 
-      <div class="col-md-2">
+      <div class="col">
       <a href="https://instagram.com/<%= settings.contact.instagram %>" style="text-decoration: none; color:#D82C7D"></a>
         <h4>
             <i class="fab fa-instagram" style="color: #D82C7D"></i>
         </h4></a>
       </div>
 
-      <div class="col-md-2">
+      <div class="col">
         <a href="https://discord.gg/<%= settings.contact.discord %>" style="text-decoration: none; color:#404EED">
           <h4>
               <i class="fab fa-discord" style="color:#404EED"></i>
           </h4></a>
           </div>
 
-          <div class="col-md-2">
+          <div class="col">
           <a href="https://twitter.com/<%= settings.contact.twitter %>" style="text-decoration: none; color:#1D9BF0">
             <h4>
                 <i class="fab fa-twitter" style="color:#1D9BF0"></i>
             </h4></a>
             </div>  
 
-            <div class="col-md-2">
+            <div class="col">
               <a href="https://github.com/<%= settings.contact.github %>" style="text-decoration: none; color:#161B22">
                 <h4>
                     <i class="fab fa-github" style="color:#161B22"></i>
