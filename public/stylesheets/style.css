@@ -1,3 +1,7 @@
+body{
+    padding: 5%;
+}
+
 #navbar-logo {
     width: 60px;
     height: 60px;
@@ -13,17 +17,13 @@
     font-weight: bold;
 }
 
-#tech-text {
-    font-size: 20px;
-}
-
 #repos {
     text-decoration: none;
     color: white;
 }
 
 #twitter , #instagram , #discord{
-    color:white;
+    color:black;
 }
 
 #twitter:hover {
