@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css"/>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="icon" href="https://i.pinimg.com/474x/4b/76/db/4b76db070d79299ef4f6ce3b2524525f.jpg">
+    <title>Yolster</title>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light shadow-lg bg-light p-3 ps-5" id="home">
+  <div class="container-fluid">
+    <a class="navbar-brand nav-text fw-bolder" href="#">
+      <img src="https://i.pinimg.com/474x/4b/76/db/4b76db070d79299ef4f6ce3b2524525f.jpg" class="rounded-circle" width="50px" height="50px">
+      &nbsp;YOLSTER</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse nav-text" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto pe-5 fw-bolder mb-2 mb-lg-0">
+          <a class="pe-5 nav-text" aria-current="page" href="/">ANA SAYFA</a>
+          <a class="pe-5 nav-text" href="#aboutme">HAKKIMDA</a>
+          <a class="pe-5 nav-text" href="#project">PROJELER</a>
+          <a class="nav-text" href="#contact">İLETİŞİM</a>
+      </ul>      
+  </div>
+  </div>
+      </nav>
+
+      <section align="center" class="easteregg pt-5 p-5 pb-5 text-light">
+        <div class="container pt-5 p-5">
+          <br/><br/><br/><br/>
+          <h1 style="letter-spacing: 5px;" class="fw-bold">HEY! BURAYA GELMEMEN GEREKİRDİ</h1>
+          <br/>
+          <h4>S-sen burayı nasıl buldun?<br/> Bura benim gizli takılma alanım. Madem geldin biraz dolaş etrafı</h4>
+          <br/>
+          <a href="#tkm"><button class="btn btn-light ps-3 pe-3 p-3 fw-bolder hi-btn">&emsp;Taş Kağıt Makas&emsp;</button></a>
+          <a href="#snake"><button class="btn btn-light ps-3 pe-3 p-3 fw-bolder hi-btn">&emsp;Google Map Snake&emsp;</button></a>
+
+
+          <br/><br/><br/><br/><br/>
+        </div>
+      </section>
+
+
+      <section align="center" class="pt-5 p-5 pb-5 text-dark" id="tkm">
+        <div class="container pt-5 p-5">
+            <h1 style="letter-spacing: 5px;" class="fw-bold">Taş Kağıt Makas Oynayalım Mı?</h1>
+            <br/>
+            <div id="liste">
+               <button class="btn btn-dark" id="kagit" data-id="0">Kağıt Yap</button>
+               <button class="btn btn-dark" id="makas" data-id="1">Makas Yap</button>
+               <button class="btn btn-dark" id="tas" data-id="2">Taş Yap</button>
+                </div> 
+                <h3 id="sonuc"></h3>
+                 
+                <script>
+                var liste=document.getElementById("liste");     
+                var kagit=document.getElementById("kagit");
+                var makas=document.getElementById("makas");
+                var tas=document.getElementById("tas");
+                var sonucYazdir=document.getElementById("sonuc");
+                 
+                 
+                kagit.onclick=secimYap;
+                makas.onclick=secimYap;
+                tas.onclick=secimYap;
+                 
+                function secimYap(){
+                var sonuc = "";
+
+                    liste.remove()
+                var secim= this.dataset.id;
+                if(secim==0)
+                {
+                sonuc="Makas yaptım. KAYBETTİN!";
+                }
+                else if(secim==1)
+                {
+                sonuc="Taş yaptım. KAYBETTİN!";
+                }
+                else if(secim==2)
+                {
+                sonuc="Kağıt yaptım. KAYBETTİN!";
+                }
+                
+                sonucYazdir.innerHTML=sonuc;
+            }
+                </script>
+        </div>
+      </section>
+
+
+      <section align="center" class="pt-5 p-5 pb-5 text-dark" id="snake">
+        <div class="container pt-5 p-5">
+            <h1 style="letter-spacing: 5px;" class="fw-bold">Google Map Snake Oynamak İster Misin?</h1>
+            <br/>
+            <iframe src="https://snake.googlemaps.com/" class="snakegame" title="Google Snake"></iframe>
+        </div>
+      </section>
+
+
+
+            <footer class="bg-dark shadow-lg text-light p-3 pt-5">
+              <div class="row justify-content-center">
+                <div class="col-5">
+              <h4>Yolster</h4>
+              <p>Programcılar, geleceği düşündükleri için sürekli olarak<br/>
+                 işleri gereğinden fazla karmaşıklaştırmaktadırlar. <br/>
+                 Geleceği boşverin. Bugün için programlayın.</p>
+                </div>
+
+                <div class="col-5"  align="center">
+                  <h4>Sosyal Medya</h4>
+                  <a href="https://discord.com/users/800809750584492052" class="text-light text-decoration-none">
+                      <i class="smw me-2 fab fa-discord"></i>
+                  </a>
+                  <a href="https://instagram.com/theyolsters" class="text-light text-decoration-none">
+                    <i class="smw me-2 fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/_yolster" class="text-light text-decoration-none">
+                  <i class="smw me-2 fab fa-twitter"></i>
+              </a>
+              <a href="https://github.com/Yolster" class="text-light text-decoration-none">
+                <i class="smw me-2 fab fa-github"></i>
+            </a>
+                </div>
+                </div>
+                 <hr/>
+                 <p align="center">CopyRight 2022. Made by 💖 <i>Yolster</i></p>
+            </footer>
+
+      <script src="https://kit.fontawesome.com/fe063c303c.js"></script>
+            <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

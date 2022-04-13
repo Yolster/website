@@ -1,118 +1,187 @@
-<%- include('./partials/header.ejs', {}) %>
-<br/><br/>
-<section class="clean-block clean-form dark p-5" align="center">
-<div class="container">
-    <img src="<%= data[0].owner.avatar_url %>" style="float: right;" class="display-block shadow-lg rounded-pill" id="index-logo"><br/><br/>
-    <h1 id="index-text">
-        Self taught<br/>
-        Full-stack web developer
-    </h1>
-    <p>Hi, my name is Arda, I am from Turkey and I am a full-stack web developer.<br/> I started building a website from the age of 14.</p>
-  </div>
-  </section>
-
-<section id="project" class="clean-block clean-form dark p-5">
-    <div class="container">
-      <div class="row">
-        <h3 id="index-text">Project:</h3>
-        
-               <div class="col-3 card shadow-lg ms-3 me-5" align="center" style="width: 18rem;">
-                <br/>
-                <a href="http://bit.ly/quodbot" class="card-image-top" style="text-decoration: none; color:black;">
-                    <img src="/images/quod.png" class="rounded-pill shadow-lg"/>
-                    <h5 class="card-title pt-2">QUOD BOT</i></h5>
-                    <p class="card-text">All in-one discord bot</p>
-                    </a>
-                    <br/>
-                  </div>
-
-                <div class="col-3 card shadow-lg me-5" align="center" style="width: 18rem;">
-                  <br/>
-                  <a href="http://bit.ly/cryptobot" class="card-image-top" style="text-decoration: none; color:black;">
-                      <img src="/images/crypto.png" class="rounded-pill shadow-lg"/>
-                      <h5 class="card-title pt-2">Lihez Crypto BOT</i></h5>
-                      <p class="card-text">Crypto Currency Bot</p>
-                    </a> 
-                    <br/>
-                    </div>
-
-                    <div class="col-3 card shadow-lg me-2" align="center" style="width: 18rem;">
-                      <br/>
-                      <a href="http://www.lihezbl.tk/" class="card-image-top" style="text-decoration: none; color:black;">
-                          <img src="/images/botlist.png" class="rounded-pill shadow-lg"/>
-                          <h5 class="card-title pt-2">Lihez BotList</i></h5>
-                          <p class="card-text">Discord Botlist</p>
-                        </a> 
-                        <br/>
-                        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css"/>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="icon" href="https://i.pinimg.com/474x/4b/76/db/4b76db070d79299ef4f6ce3b2524525f.jpg">
+    <title>Yolster</title>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light shadow-lg bg-light p-3 ps-5" id="home">
+  <div class="container-fluid">
+    <a class="navbar-brand nav-text fw-bolder" href="#">
+      <img src="https://i.pinimg.com/474x/4b/76/db/4b76db070d79299ef4f6ce3b2524525f.jpg" class="rounded-circle" width="50px" height="50px">
+      &nbsp;YOLSTER</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse nav-text" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto pe-5 fw-bolder mb-2 mb-lg-0">
+          <a class="pe-5 nav-text" aria-current="page" href="/">ANA SAYFA</a>
+          <a class="pe-5 nav-text" href="#aboutme">HAKKIMDA</a>
+          <a class="pe-5 nav-text" href="#project">PROJELER</a>
+          <a class="nav-text" href="#contact">İLETİŞİM</a>
+      </ul>      
   </div>
   </div>
-  </section>
+      </nav>
 
-<section class="p-5">
-  <div class="container">
-    <div class="row">
-    <h3 id="index-text">Languages and tools:</h3>
-    <br/>
-    <div class="row">
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fab fa-js-square" style="color:#efd81d"></i> Javascript</div>
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fab fa-node-js" style="color:#74a862"></i> Node.js</div>
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fab fa-php" style="color:#7377AD"></i> Php</div>
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fab fa-html5" style="color:#de4b25"></i> Html5</div>
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fab fa-css3-alt" style="color:#146eb1"></i> Css3</div>
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fab fa-bootstrap" style="color:#7611F6"></i> BootStrap</div>
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fab fa-css3" style="color:#40C3AA"></i> Bulma.IO</div>
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fab fa-git-alt" style="color:#e94e31"></i> Git</div>
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fas fa-database" style="color:#005d88"></i> MySql</div>
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fas fa-cloud" style="color:#479848"></i> MongoDB</div>
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fab fa-react" style="color:#61DAFB"></i> React.JS</div>
-    <div class="col-2 btn btn-light shadow-lg me-4 mb-2"><i class="fab fa-vuejs" style="color:#3FB27F"></i> Vue.JS</div>
-</div>
-</div></div>
-</section>
-
-<hr style="color:black"/>
-
-<section class="clean-block clean-form p-5" id="contact">
-<div class="row">
-  <h3 id="index-text">Contact</h3>
-
-  <div class="col-2 btn btn-light shadow-lg  rounded-pill me-4">
-  <a href="mailto:<%= settings.contact.email %>" style="text-decoration: none; color:#253163">
-      <h4>
-          <i class="fas fa-envelope" style="color:#253163"></i>
-      </h4></a>
-</div>
-
-<div class="col-2 btn btn-light shadow-lg rounded-pill me-4">
-      <a href="https://instagram.com/<%= settings.contact.instagram %>" style="text-decoration: none; color:#D82C7D"></a>
-        <h4>
-            <i class="fab fa-instagram" style="color: #D82C7D"></i>
-        </h4></a>
-      </div>
-
-      <div class="col-2 btn btn-light shadow-lg  rounded-pill me-4">
-        <a href="https://discord.gg/<%= settings.contact.discord %>" style="text-decoration: none; color:#404EED">
-          <h4>
-              <i class="fab fa-discord" style="color:#404EED"></i>
-          </h4></a>
-          </div>
-
-          <div class="col-2 btn btn-light shadow-lg  rounded-pill me-4">
-          <a href="https://twitter.com/<%= settings.contact.twitter %>" style="text-decoration: none; color:#1D9BF0">
-            <h4>
-                <i class="fab fa-twitter" style="color:#1D9BF0"></i>
-            </h4></a>
-            </div>  
-
-            <div class="col-2 btn btn-light shadow-lg rounded-pill">
-              <a href="https://github.com/<%= settings.contact.github %>" style="text-decoration: none; color:#161B22">
-                <h4>
-                    <i class="fab fa-github" style="color:#161B22"></i>
-                </h4></a>
-                </div>  
-            </div>
+      <section align="center" class="section pt-5 p-5 pb-5 text-light">
+        <div class="container pt-5 p-5">
+          <br/><br/><br/><br/>
+          <h1 style="letter-spacing: 5px;" class="fw-bold">HEY! BEN ARDA</h1>
+          <br/>
+          <h4>Kendi çapında projeler yapan full-stack geliştiriciyim.<br/> En sevdiğim şey websiteleri tasarlamak</h4>
+          <br/>
+          <a href="#project"><button class="btn btn-light ps-3 pe-3 p-3 fw-bolder hi-btn">&emsp;PROJELERİM&emsp;</button></a>
+          <br/><br/><br/><br/><br/>
+        </div>
       </section>
 
 
-<%- include('./partials/footer.ejs', {}) %>
+      <section class="pt-5 p-5 pb-5" id="aboutme">
+        <div class="container pt-5 p-5">
+          <div class="row justify-content-center">
+          <div class="col-5 me-5">
+          <h1 style="letter-spacing: 5px;" class="fw-bold">Hakkımda</h1>
+          <br/>
+          <h5>Merhaba ben Arda. 15 yaşındayım ve full-stack geliştiriciyim.<br/> Kendi çapımda web ve masaüstü projeleri geliştiriyorum.</h5>
+        </div>
+
+        <div class="col-5 ms-5">
+          <h1 style="letter-spacing: 5px;" class="fw-bold">Yeteneklerim</h1>
+          <br/>
+          <button class="btn special-btn mb-1">JavaScript</button>
+          <button class="btn special-btn mb-1">Node.JS</button>
+          <button class="btn special-btn mb-1">HTML</button>
+          <button class="btn special-btn mb-1">CSS</button>
+          <button class="btn special-btn mb-1">BootStrap</button>
+          <button class="btn special-btn">Mysql</button>
+          <button class="btn special-btn">Mongo DB (Başlangıç)</button>
+          <button class="btn special-btn">Git</button>
+          <button class="btn special-btn">Github Api</button>
+        </div>
+      </div>
+        </div>
+        </section>
+
+        <section class="pt-5 p-5 pb-5" id="project">
+          <div class="container pt-5 p-5">
+            <h1 align="center" style="letter-spacing: 5px;" class="fw-bold">Projelerim</h1>
+            <div class="row">
+              <a href="http://www.lihezgame.cf/" class="text-dark text-decoration-none"><div>
+                <img src="https://i.pinimg.com/236x/14/50/62/145062dc8cf5aebeff4ddda891ef51f1.jpg" width="128" height="128" class="float-start me-4 mb-5">
+                &emsp;<h1>Lihez Game</h1>
+                <p>Uygun fiyata oyunlar alabileceğiniz bir platform.</p>
+            </div></a>
+            <a href="http://bit.ly/quodbot" class="text-dark text-decoration-none"><div>
+                  <img src="/images/quod.png" class="float-start me-4 mb-5">
+                  &emsp;<h1>QUOD BOT</h1>
+                  <p>Moderasyon - Eğlence - Ekonomi - Müzik vb. özellikleri olan Quod bot sizin sunucunuza ekleyebileceğiniz en iyi bot.</p>
+              </div></a>
+              <a href="http://lihezbl.tk/" class="text-dark text-decoration-none"><div>
+                <img src="/images/botlist.png" class="float-start me-4 mb-5">
+                &emsp;<h1>Lihez Botlist</h1>
+                <p>Lihez Botlist Discord botlarınızı ekleyip onların istatistiklerini yükseltebileceğiniz bir sistemdir.</p>
+            </div></a>
+            <a href="http://bit.ly/cryptobot" class="text-dark text-decoration-none"><div>
+              <img src="/images/crypto.png" class="float-start me-4 mb-5">
+              &emsp;<h1>Lihez Crypto</h1>
+              <p>Lihez Crypto Discord üzerinden anlık olarak crypto borsası hakkında bilgi alabileceğiniz bir bot. </p>
+          </div></a>
+          <a href="http://localhost:3000/easteregg" class="text-dark text-decoration-none"><div>
+            <img src="https://i.pinimg.com/474x/4b/76/db/4b76db070d79299ef4f6ce3b2524525f.jpg" width="128" height="128" class="float-start me-4 mb-5">
+            &emsp;<h1>Bu Website</h1>
+            <p>Kısaca bu site de bir proje</p>
+        </div></a>
+            </div>
+          </div>
+          </section>
+
+
+          <section class="pt-5 p-5 pb-5" id="contact">
+            <div class="container pt-5 p-5">
+              <div class="row justify-content-center">
+                <div class="col-5 me-5" style="cursor: not-allowed;">
+                  <h1 align="center" style="letter-spacing: 5px;" class="fw-bold">Bana Mail Gönder</h1>
+                  <br/>
+                  <div class="p-5 bg-dark rounded text-light">
+                  <form class="form" method="POST" action="/sendmail">
+                    <label style="color:gray; cursor: not-allowed;"><h2>İsim</h2></label>
+                    <input style="cursor: not-allowed;" type="text" name="name" class="form-control" placeholder="İsminizi girin." disabled/><br/>
+                    <label style="color:gray; cursor: not-allowed;"><h2>E-Posta</h2></label>
+                    <input style="cursor: not-allowed;" type="email" name="email" class="form-control" placeholder="E-Posta adresinizi girin." disabled/><br/>
+                    <label style="color:gray; cursor: not-allowed;"><h2>Mesaj</h2></label>
+                    <textarea style="cursor: not-allowed;" type="text" name="message" class="form-control" placeholder="Mesajınızı yazın." disabled></textarea>
+                   
+                  </form>
+                </div>
+                </div>
+                <div class="col-5 ms-5 me-5" align="center">
+                  <h1 align="center" style="letter-spacing: 5px;" class="fw-bold">Sosyal Medya</h1>
+                  <br/>
+                <a href="https://instagram.com/theyolsters" class="sm text-dark text-decoration-none">
+                 <div style="width:60vh" class="sm">
+                   <i class="me-2 fab fa-instagram fa-3x float-start"></i><h3>Instagram</h3>
+                 </div>
+                </a>
+                <br/>                <br/><br/>
+              <a href="https://twitter.com/_yolster" class="sm text-dark text-decoration-none">
+                <div style="width:60vh" class="sm">
+                  <i class="me-2 fab fa-twitter fa-3x float-start"></i><h3>Twitter</h3>
+                </div>
+              </a>
+              <br/>                <br/><br/>
+              <a href="https://github.com/Yolster" class="sm text-dark text-decoration-none">
+                <div style="width:60vh" class="sm"> 
+                  <i class="me-2 fab fa-github fa-3x float-start"></i><h3>GitHub</h3>
+                </div>
+              </a>
+              <br/>                <br/><br/>
+            <a href="https://discord.com/users/800809750584492052" class=" text-dark text-decoration-none">
+              <div style="width:60vh" class="sm">
+                <i class="me-2 fab fa-discord fa-3x float-start"></i><h3>Discord</h3>
+              </div>
+            </a>
+        </div>
+              </div>
+            </div>
+            </section>
+
+
+            <footer class="bg-dark shadow-lg text-light p-3 pt-5">
+              <div class="row justify-content-center">
+                <div class="col-5">
+              <h4>Yolster</h4>
+              <p>Programcılar, geleceği düşündükleri için sürekli olarak<br/>
+                 işleri gereğinden fazla karmaşıklaştırmaktadırlar. <br/>
+                 Geleceği boşverin. Bugün için programlayın.</p>
+                </div>
+
+                <div class="col-5"  align="center">
+                  <h4>Sosyal Medya</h4>
+                  <a href="https://discord.com/users/800809750584492052" class="text-light text-decoration-none">
+                      <i class="smw me-2 fab fa-discord"></i>
+                  </a>
+                  <a href="https://instagram.com/theyolsters" class="text-light text-decoration-none">
+                    <i class="smw me-2 fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/_yolster" class="text-light text-decoration-none">
+                  <i class="smw me-2 fab fa-twitter"></i>
+              </a>
+              <a href="https://github.com/Yolster" class="text-light text-decoration-none">
+                <i class="smw me-2 fab fa-github"></i>
+            </a>
+                </div>
+                </div>
+                 <hr/>
+                 <p align="center">CopyRight 2022. Made by 💖 <i>Yolster</i></p>
+            </footer>
+
+      <script src="https://kit.fontawesome.com/fe063c303c.js"></script>
+            <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

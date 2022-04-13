@@ -1,43 +1,63 @@
-body{
-    padding: 5%;
+.section{
+    background-image: url('https://wallpaperaccess.com/full/2505393.jpg');
 }
 
-#navbar-logo {
-    width: 60px;
-    height: 60px;
+.easteregg{
+  background-image: url('  https://www.pixelstalk.net/wp-content/uploads/2016/07/1280x800-Backgrounds.jpg');
 }
 
-#index-logo {
-    width:250px;
-    height:250px;
-    border: 1px solid black;
-}
-
-#index-text {
-    font-weight: bold;
-}
-
-#repos {
+.nav-text {
+    letter-spacing: 2px;
+    color: rgb(39, 39, 39);
     text-decoration: none;
+  }
+
+.nav-text:hover {
+    color: #2600ff;
+  }
+
+
+  @keyframes goup {
+    0%   {top:0px;}
+    25%  {top:-5px;}
+    50%  {top:-5px;}
+    75%  {top:-5px;}
+    100% {top:-5px;}
+  }
+  
+  .hi-btn {
+    letter-spacing: 2px;
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  .hi-btn:hover {
+    background-color:#1c1f23;
+    color:white;
+    letter-spacing: 3px;
+    animation-name: goup;
+    animation-duration: 2s;
+  }
+
+  .special-btn {
     color: white;
-}
+    background-color: #808080;
+    background-color: #808080;
+  }
 
-#twitter , #instagram , #discord{
-    color:black;
-}
+  .sm{    transition: 0.2s; }
 
-#twitter:hover {
-    color:#00aced;
-}
+  .sm:hover {
+    color: rgb(55, 0, 255);
+  }
 
-#instagram:hover {
-    color: #f73846;
-}
+  .smw{    transition: 0.2s; }
 
-#discord:hover {
-    color: #6d85d2;
-}
+  .smw:hover {
+    color: red;
+  }
 
-.section-padding {
-    padding: 5%;
-}
+  .snakegame {
+    width: 100vh;
+    height: 100vh;
+  }

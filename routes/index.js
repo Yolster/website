@@ -6,35 +6,19 @@ var {session} = require('../app')
 
 /* GET home page. */
 router.get('/', async(req, res) => {
-
-  request({
-    url: `https://api.github.com/users/${settings.github_username}/repos`,
-    headers: {'user-agent': 'node.js'},
-    }, async(error, response, body) => {
-    if (error) return console.log(error)
-    else if (!error) {
-    var data = JSON.parse(body)
-    if(data.message){
-      return res.redirect(`/ratelimit`)
-    }else{
       res.render('index', {
-        title:"HOME - Yolster",
-        data:data,
+        title:"Ana Sayfa - Yolster",
         settings:settings,
-        font: settings.fontawesome
       })
-    }
-  }
-})
-});
-
-router.get('/ratelimit', function(req, res, next) {
-      res.render('ratelimit')
 });
 
 
-router.get('/404', async(req, res) => {
-      res.render('404', {})
+router.get('/easteregg', async(req, res) => {
+  res.render('easteregg', {
+    title:"Easter Egg - Yolster",
+    settings:settings,
+  })
 });
+
 
 module.exports = router;
